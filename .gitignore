@@ -2,7 +2,7 @@
 /node_modules/
 /composer.lock
 /composer.phar
-
+/.idea
 /etc/build/*
 !/etc/build/.gitignore
 
