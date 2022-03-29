@@ -1,0 +1,18 @@
+# Define your own admin routes here
+services:
+  HelloJonzz\SyliusJobPlugin\Controller\GreetingController:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  hello_jonzz_sylius_job_plugin.admin.menu_builder:
+      class: HelloJonzz\SyliusJobPlugin\Menu\JobMenuBuilder
+      tags:
+        - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu }
+
+  hello_jonzz_sylius_job_plugin.form.type.job:
+      class: HelloJonzz\SyliusJobPlugin\Form\Type\JobType
+      arguments:
+        - HelloJonzz\SyliusJobPlugin\Entity\Job
+      tags:
+        - { name: form.type }

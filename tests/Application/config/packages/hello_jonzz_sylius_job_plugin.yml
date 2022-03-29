@@ -1,0 +1,2 @@
+imports:
+  - { resource: "@HelloJonzzSyliusJobPlugin/Resources/config/config.yml" }

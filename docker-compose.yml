@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+    db:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=blaze
+            - MYSQL_DATABASE=blaze
+            - MYSQL_USER=blaze
+            - MYSQL_PASSWORD=blaze
+        volumes:
+            - hell-jonzz-job-db-data:/var/lib/mysql:rw
+            # you may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+            # - ./docker/mysql/data:/var/lib/mysql:rw,delegated
+        ports:
+            - "3306:3306"
+    adminer:
+        image: adminer
+        depends_on:
+            - db
+        ports:
+            - 8080:8080
+
+volumes:
+    hell-jonzz-job-db-data:
+    # blaze-public-media:

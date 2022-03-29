@@ -1,0 +1,9 @@
+hello_jonzz_sylius_job_plugin_admin_job:
+  resource: |
+    alias: hello_jonzz_sylius_job_plugin.job
+    section: admin
+    except: ['show']
+    redirect: update
+    grid: hello_jonzz_sylius_job_plugin_admin_job
+    templates: "@SyliusAdmin\\Crud"
+  type: sylius.resource

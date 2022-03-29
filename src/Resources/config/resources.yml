@@ -1,0 +1,8 @@
+sylius_resource:
+  resources:
+    hello_jonzz_sylius_job_plugin.job:
+      driver: doctrine/orm
+      classes:
+        model: HelloJonzz\SyliusJobPlugin\Entity\Job
+        interface: HelloJonzz\SyliusJobPlugin\Entity\JobInterface
+        form: HelloJonzz\SyliusJobPlugin\Form\Type\JobType
